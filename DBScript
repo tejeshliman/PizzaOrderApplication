@@ -1,0 +1,112 @@
+USE [PizzaOrderSystem]
+GO
+
+/****** Object:  Table [dbo].[Cart]    Script Date: 3/16/2020 11:19:13 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Cart](
+	[CartId] [int] IDENTITY(1,1) NOT NULL,
+	[SubTotal] [decimal](18, 0) NOT NULL
+) ON [PRIMARY]
+GO
+
+USE [PizzaOrderSystem]
+GO
+
+/****** Object:  Table [dbo].[CartItem]    Script Date: 3/16/2020 11:19:56 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CartItem](
+	[CartItemId] [int] IDENTITY(1,1) NOT NULL,
+	[CartId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[ProductSize] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Cost] [decimal](18, 0) NULL,
+	[Sauce] [int] NULL,
+	[ExtraChese] [bit] NOT NULL
+) ON [PRIMARY]
+GO
+
+USE [PizzaOrderSystem]
+GO
+
+/****** Object:  Table [dbo].[Order]    Script Date: 3/16/2020 11:20:35 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Order](
+	[OrderId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderedDate] [datetime2](7) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[AddType] [int] NOT NULL,
+	[Address] [varchar](150) NOT NULL,
+	[Country] [varchar](50) NOT NULL,
+	[ZipCode] [varchar](6) NOT NULL,
+	[PhoneNumber] [varchar](20) NOT NULL,
+	[CartId] [int] NOT NULL,
+	[SubTotal] [decimal](18, 0) NOT NULL,
+	[IsDelivered] [bit] NOT NULL,
+	[DeliveredOn] [datetime2](7) NULL
+) ON [PRIMARY]
+GO
+
+
+USE [PizzaOrderSystem]
+GO
+
+/****** Object:  Table [dbo].[Product]    Script Date: 3/16/2020 11:20:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Product](
+	[ProductId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Description] [varchar](max) NOT NULL,
+	[CategoryType] [int] NOT NULL,
+	[ProductType] [int] NOT NULL,
+	[ImagePath] [varchar](100) NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+USE [PizzaOrderSystem]
+GO
+
+/****** Object:  Table [dbo].[ProductPrice]    Script Date: 3/16/2020 11:21:12 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ProductPrice](
+	[ProductPriceId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Size] [int] NOT NULL,
+	[Price] [decimal](18, 0) NOT NULL
+) ON [PRIMARY]
+GO
+
+
+
+
+
