@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaOrderApplication.Web", "PizzaOrderApplication.Web.csproj", "{37441945-8C33-4E8F-8140-6E9E74913478}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaOrderApplication.Core", "..\PizzaOrderApplicationCore\PizzaOrderApplication.Core.csproj", "{6AA8267E-79C4-40E0-940C-E02D26EC8B8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaOrderApplication.Infrastrucure", "..\PizzaOrderApplicationInfrastrucure\PizzaOrderApplication.Infrastrucure.csproj", "{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{327EF7B2-15F3-412A-9EC3-FD3C370A2F22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E7DBBE0-D94B-4570-B8FB-FC58BF049E41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaOrderApplicationClient", "..\PizzaOrderApplicationClient\PizzaOrderApplicationClient.csproj", "{B4F2F15A-B4E7-4656-AB36-240991DD1DC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{DF66171C-86AE-47B8-8345-5AAB1CF764A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaOrderApplication.Tests", "..\PizzaOrderApplication.Tests\PizzaOrderApplication.Tests.csproj", "{D31FE21B-FB1E-4AA8-9201-3EC61BD39582}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37441945-8C33-4E8F-8140-6E9E74913478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37441945-8C33-4E8F-8140-6E9E74913478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37441945-8C33-4E8F-8140-6E9E74913478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37441945-8C33-4E8F-8140-6E9E74913478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA8267E-79C4-40E0-940C-E02D26EC8B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA8267E-79C4-40E0-940C-E02D26EC8B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA8267E-79C4-40E0-940C-E02D26EC8B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA8267E-79C4-40E0-940C-E02D26EC8B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F2F15A-B4E7-4656-AB36-240991DD1DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F2F15A-B4E7-4656-AB36-240991DD1DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F2F15A-B4E7-4656-AB36-240991DD1DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F2F15A-B4E7-4656-AB36-240991DD1DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31FE21B-FB1E-4AA8-9201-3EC61BD39582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31FE21B-FB1E-4AA8-9201-3EC61BD39582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31FE21B-FB1E-4AA8-9201-3EC61BD39582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31FE21B-FB1E-4AA8-9201-3EC61BD39582}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37441945-8C33-4E8F-8140-6E9E74913478} = {327EF7B2-15F3-412A-9EC3-FD3C370A2F22}
+		{6AA8267E-79C4-40E0-940C-E02D26EC8B8A} = {327EF7B2-15F3-412A-9EC3-FD3C370A2F22}
+		{DD5C7AE7-2AD4-4896-8DA9-EE07821FD3F6} = {327EF7B2-15F3-412A-9EC3-FD3C370A2F22}
+		{B4F2F15A-B4E7-4656-AB36-240991DD1DC9} = {DF66171C-86AE-47B8-8345-5AAB1CF764A7}
+		{D31FE21B-FB1E-4AA8-9201-3EC61BD39582} = {9E7DBBE0-D94B-4570-B8FB-FC58BF049E41}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {375B2C38-8C18-457E-85AC-377C41749D22}
+	EndGlobalSection
+EndGlobal
