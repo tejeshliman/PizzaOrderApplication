@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PizzaOrderApplication.Core.ValueObjects.Result.ProductResult>
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding:3px; display:inline-flex">
+    <table>
+        <tr>
+            <td>
+                @foreach (var product in Model.GroupBy(x => x.CategoryType))
+                {
+                <div>
+                    <h2>@Html.DisplayFor(modelItem => product.Key)</h2>
+                    @foreach (var productType in product)
+                    {
+                        <div style="padding:3px; display:inline-flex">
+                            <div class="card" style="width: 21rem;height:35rem">
+                                <img class="card-img-top" src="~/Images/@Html.DisplayFor(modelItem => productType.ImagePath)" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => productType.Name)</h5>
+                                    <label class="card-subtitle" style="display:inline-block"> @Html.DisplayFor(modelItem => productType.Description)</label>
+                                </div>
+                                <div style="padding:2px; display:inline-flex">
+
+                                    <select class="custom-select-lg  btn btn-success" id="ddlSize" style="margin-left: 0.5rem;width:170px;">
+                                        <option selected>Choose...</option>
+                                        <option value="1">
+                                            @PizzaOrderApplication.Core.Common.Enums.ProductSize.Small
+                                            @Html.DisplayFor(modelItem => productType.PriceList.Where(x => x.Size == PizzaOrderApplication.Core.Common.Enums.ProductSize.Small).FirstOrDefault().Price)
+                                        </option>
+                                        <option value="2">
+                                            @PizzaOrderApplication.Core.Common.Enums.ProductSize.Medium
+                                            @Html.DisplayFor(modelItem => productType.PriceList.Where(x => x.Size == PizzaOrderApplication.Core.Common.Enums.ProductSize.Medium).FirstOrDefault().Price)
+                                        </option>
+                                        <option value="3">
+                                            @PizzaOrderApplication.Core.Common.Enums.ProductSize.Large
+                                            @Html.DisplayFor(modelItem => productType.PriceList.Where(x => x.Size == PizzaOrderApplication.Core.Common.Enums.ProductSize.Large).FirstOrDefault().Price)
+                                        </option>
+                                    </select>
+
+                                    <button type="button" class="btn btn-primary" style="border-style:solid; float:right;margin-left: 2rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                }
+            </td>
+
+        </tr>
+    </table>
+    <div>
+        <div class="card" style="margin-top:3rem; width:20rem;height:35rem; float:right">
+            <div class="card-body" style="position: relative;">
+                <h3 class="card-title" style="font-weight:800">Cart</h3>
+                <div style="position: absolute; bottom:0">
+                    <h3 class="card-title" style="font-weight:800; ">SubTotal:</h3>
+                </div>
+            </div>
+        </div>
+    </div>
